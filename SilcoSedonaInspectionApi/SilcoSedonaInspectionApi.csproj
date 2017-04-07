@@ -184,11 +184,35 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\SV_InspectionController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="CustSilco.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustSilco.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustSilco.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustSilco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustSilco.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustSilco.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CustSilco_AllInspForSiteServiceComp_Result.cs">
+      <DependentUpon>CustSilco.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="inspsearch.cs">
+      <DependentUpon>CustSilco.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Helper.cs" />
+    <Compile Include="Models\Searchparm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SilcoSedona.cs" />
     <Compile Include="SV_Inspection.cs" />
@@ -197,6 +221,16 @@
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="CustSilco.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CustSilco.edmx</DependentUpon>
+      <LastGenOutput>CustSilco.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CustSilco.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CustSilco.edmx</DependentUpon>
+      <LastGenOutput>CustSilco.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -224,6 +258,13 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <EntityDeploy Include="CustSilco.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CustSilco.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="CustSilco.edmx.diagram">
+      <DependentUpon>CustSilco.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -247,7 +288,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
