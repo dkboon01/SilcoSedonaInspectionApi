@@ -8,9 +8,9 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using SilcoSedonaInspectionApi;
+using SilcoSedonaCustomApi;
 
-namespace SilcoSedonaInspectionApi.Controllers
+namespace SilcoSedonaCustomApi.Controllers
 {
     public class SV_InspectionController : ApiController
     {

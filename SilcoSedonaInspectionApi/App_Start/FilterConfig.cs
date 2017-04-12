@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace SilcoSedonaInspectionApi
+namespace SilcoSedonaCustomApi
 {
     public class FilterConfig
     {

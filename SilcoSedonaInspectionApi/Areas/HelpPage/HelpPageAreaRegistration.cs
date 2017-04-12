@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace SilcoSedonaInspectionApi.Areas.HelpPage
+namespace SilcoSedonaCustomApi.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace SilcoSedonaInspectionApi.Areas.HelpPage.ModelDescriptions
+namespace SilcoSedonaCustomApi.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Use this attribute to change the name of the <see cref="ModelDescription"/> generated for a type.

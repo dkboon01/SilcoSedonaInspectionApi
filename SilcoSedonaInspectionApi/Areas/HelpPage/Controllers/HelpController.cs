@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using SilcoSedonaInspectionApi.Areas.HelpPage.ModelDescriptions;
-using SilcoSedonaInspectionApi.Areas.HelpPage.Models;
+using SilcoSedonaCustomApi.Areas.HelpPage.ModelDescriptions;
+using SilcoSedonaCustomApi.Areas.HelpPage.Models;
 
-namespace SilcoSedonaInspectionApi.Areas.HelpPage.Controllers
+namespace SilcoSedonaCustomApi.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

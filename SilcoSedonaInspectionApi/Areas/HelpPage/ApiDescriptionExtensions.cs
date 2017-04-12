@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace SilcoSedonaInspectionApi.Areas.HelpPage
+namespace SilcoSedonaCustomApi.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

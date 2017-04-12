@@ -1,4 +1,4 @@
-namespace SilcoSedonaInspectionApi
+namespace SilcoSedonaCustomApi
 {
     using System;
     using System.Data.Entity;
@@ -42,5 +42,7 @@ namespace SilcoSedonaInspectionApi
                 .IsFixedLength()
                 .IsUnicode(false);
         }
+
+        public System.Data.Entity.DbSet<SilcoSedonaInspectionApi.AR_Userdef_8> AR_Userdef_8 { get; set; }
     }
 }

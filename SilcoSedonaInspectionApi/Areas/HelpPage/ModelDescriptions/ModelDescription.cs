@@ -1,6 +1,6 @@
 using System;
 
-namespace SilcoSedonaInspectionApi.Areas.HelpPage.ModelDescriptions
+namespace SilcoSedonaCustomApi.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.

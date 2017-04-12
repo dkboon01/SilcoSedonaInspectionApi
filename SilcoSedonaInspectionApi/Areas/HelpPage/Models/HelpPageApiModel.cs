@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using SilcoSedonaInspectionApi.Areas.HelpPage.ModelDescriptions;
+using SilcoSedonaCustomApi.Areas.HelpPage.ModelDescriptions;
 
-namespace SilcoSedonaInspectionApi.Areas.HelpPage.Models
+namespace SilcoSedonaCustomApi.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.

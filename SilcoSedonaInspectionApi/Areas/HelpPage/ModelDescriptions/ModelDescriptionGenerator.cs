@@ -11,7 +11,7 @@ using System.Web.Http.Description;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
 
-namespace SilcoSedonaInspectionApi.Areas.HelpPage.ModelDescriptions
+namespace SilcoSedonaCustomApi.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Generates model descriptions for given types.

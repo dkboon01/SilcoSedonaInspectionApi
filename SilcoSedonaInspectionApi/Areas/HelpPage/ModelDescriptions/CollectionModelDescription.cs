@@ -1,4 +1,4 @@
-namespace SilcoSedonaInspectionApi.Areas.HelpPage.ModelDescriptions
+namespace SilcoSedonaCustomApi.Areas.HelpPage.ModelDescriptions
 {
     public class CollectionModelDescription : ModelDescription
     {

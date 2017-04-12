@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace SilcoSedonaInspectionApi.Areas.HelpPage.ModelDescriptions
+namespace SilcoSedonaCustomApi.Areas.HelpPage.ModelDescriptions
 {
     public class EnumTypeModelDescription : ModelDescription
     {

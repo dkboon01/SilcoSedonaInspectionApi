@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace SilcoSedonaInspectionApi.Areas.HelpPage.ModelDescriptions
+namespace SilcoSedonaCustomApi.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {

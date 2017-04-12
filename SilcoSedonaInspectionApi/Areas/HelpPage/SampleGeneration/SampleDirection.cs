@@ -1,4 +1,4 @@
-namespace SilcoSedonaInspectionApi.Areas.HelpPage
+namespace SilcoSedonaCustomApi.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

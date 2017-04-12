@@ -4,12 +4,13 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Silco_FinalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Silco_FinalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <Function Name="CustSilco_AllInspForSiteServiceComp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="siteid" Type="int" Mode="In" />
           <Parameter Name="servicecompany" Type="int" Mode="In" />
         </Function>
-        <EntityContainer Name="Silco_FinalModelStoreContainer" />
+        <EntityContainer Name="Silco_FinalModelStoreContainer">
+        </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -23,11 +24,12 @@
         <ComplexType Name="inspsearch" >
           </ComplexType>
         <ComplexType Name="CustSilco_AllInspForSiteServiceComp_Result">
-          <Property Type="String" Name="inspcycldesc" Nullable="true" MaxLength="30" />
-          <Property Type="String" Name="syscode" Nullable="true" MaxLength="30" />
-          <Property Type="String" Name="servcomp" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="inspcycldesc" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="syscode" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="servcomp" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="nextinpdate" Nullable="true" MaxLength="10" />
           <Property Type="String" Name="lastinpdate" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="inspectionid" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -43,6 +45,7 @@
                 <ScalarProperty Name="servcomp" ColumnName="servcomp" />
                 <ScalarProperty Name="nextinpdate" ColumnName="nextinpdate" />
                 <ScalarProperty Name="lastinpdate" ColumnName="lastinpdate" />
+                <ScalarProperty Name="inspectionid" ColumnName="inspectionid" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

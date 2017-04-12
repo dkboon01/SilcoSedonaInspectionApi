@@ -4,27 +4,30 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using SilcoSedonaInspectionApi.Models;
+using SilcoSedonaCustomApi.Models;
+using SilcoSedonaInspectionApi;
 
-namespace SilcoSedonaInspectionApi.Controllers
+namespace SilcoSedonaCustomApi.Controllers
 {
     public class SearchController : ApiController
     {
         //private CustSilco_AllInspForSiteServiceComp_Result srchinsp;
 
         // GET: api/Search
-    // @RequestMapping(path= "/api/Search/{siteid}/{sitecomp}", method=WebRequestMethods.Get)
-         // [Route("api/Search/{siteid}/{servcomp}")]
-        public List<CustSilco_AllInspForSiteServiceComp_Result>Get(int siteid, int servcomp)
+        // @RequestMapping(path= "/api/Search/{siteid}/{sitecomp}", method=WebRequestMethods.Get)
+        // [Route("api/Search/{siteid}/{servcomp}")]
+        //  public List<CustSilco_AllInspForSiteServiceComp_Result>Get(int siteid, int servcomp)
+        public HttpResponseMessage Get(int siteid, int servcomp)
         {
           //  parm.siteid
             //    parm.servcomp
 
-            List<CustSilco_AllInspForSiteServiceComp_Result> srchinsp = 
+           // List<CustSilco_AllInspForSiteServiceComp_Result> srchinsp = 
+           var srchinsp = 
               Helper.CustSilco_AllInspForSiteServiceComp<CustSilco_AllInspForSiteServiceComp_Result>(siteid, servcomp).ToList();
      
       
-                    return  srchinsp;
+                    return  Request.CreateResponse(HttpStatusCode.OK, srchinsp);
         }
 
                 // GET: api/Search/5

@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using SilcoSedonaInspectionApi.Areas.HelpPage.ModelDescriptions;
-using SilcoSedonaInspectionApi.Areas.HelpPage.Models;
+using SilcoSedonaCustomApi.Areas.HelpPage.ModelDescriptions;
+using SilcoSedonaCustomApi.Areas.HelpPage.Models;
 
-namespace SilcoSedonaInspectionApi.Areas.HelpPage
+namespace SilcoSedonaCustomApi.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {
