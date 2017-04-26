@@ -33,5 +33,40 @@ namespace SilcoSedonaCustomApi.Models
             return inspsearch;
           
         }
+        public static bool CustSilco_SV_Inspection(int inspectionid, DateTime nextdate,  int routeid )
+
+       
+        {
+            var db = new Silco_FinalEntities1();
+            bool success;
+            try
+            {
+                var ins = db.CustSilco_SV_Inspection(inspectionid, nextdate, routeid);
+                success = true;
+            }
+            catch
+            {
+                success = false;
+            }
+            return success;
+
+        }
+        public static bool CustSilco_EditLog(string user, string inspectiontype, string systemcode , string sitecode , string action , string code, int custno)
+
+        {
+            var db = new Silco_FinalEntities1();
+            bool success;
+            try
+            {
+                var ins = db.CustSilco_InsertEditLog(user, inspectiontype, systemcode, sitecode, action, code, custno);
+                success = true;
+            }
+            catch
+            {
+                success = false;
+            }
+            return success;
+
+        }
     }
 }

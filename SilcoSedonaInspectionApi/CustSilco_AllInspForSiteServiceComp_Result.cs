@@ -19,5 +19,6 @@ namespace SilcoSedonaInspectionApi
         public string nextinpdate { get; set; }
         public string lastinpdate { get; set; }
         public Nullable<int> inspectionid { get; set; }
+        public Nullable<int> customer_system_id { get; set; }
     }
 }

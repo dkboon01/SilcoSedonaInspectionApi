@@ -186,6 +186,7 @@
     <Compile Include="AR_Userdef_8.cs" />
     <Compile Include="Controllers\AR_Userdef_8Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\EditLogController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\SV_InspectionController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -213,6 +214,8 @@
     <Compile Include="inspsearch.cs">
       <DependentUpon>CustSilco.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CustSilco_SV_Inspection.cs" />
+    <Compile Include="Models\EditLog.cs" />
     <Compile Include="Models\Helper.cs" />
     <Compile Include="Models\Searchparm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -273,7 +276,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

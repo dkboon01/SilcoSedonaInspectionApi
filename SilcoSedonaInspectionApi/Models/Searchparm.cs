@@ -8,6 +8,6 @@ namespace SilcoSedonaCustomApi.Models
     public class Searchparm
     {
         public int siteid { get; set; }
-            public int servcomp { get; set; }
+        public int servcomp { get; set; }
     }
 }

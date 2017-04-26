@@ -40,5 +40,55 @@ namespace SilcoSedonaInspectionApi
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CustSilco_AllInspForSiteServiceComp_Result>("CustSilco_AllInspForSiteServiceComp", siteidParameter, servicecompanyParameter);
         }
+    
+        public virtual int CustSilco_SV_Inspection(Nullable<int> inspectionid, Nullable<System.DateTime> nextdate, Nullable<int> routeid)
+        {
+            var inspectionidParameter = inspectionid.HasValue ?
+                new ObjectParameter("inspectionid", inspectionid) :
+                new ObjectParameter("inspectionid", typeof(int));
+    
+            var nextdateParameter = nextdate.HasValue ?
+                new ObjectParameter("nextdate", nextdate) :
+                new ObjectParameter("nextdate", typeof(System.DateTime));
+    
+            var routeidParameter = routeid.HasValue ?
+                new ObjectParameter("routeid", routeid) :
+                new ObjectParameter("routeid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CustSilco_SV_Inspection", inspectionidParameter, nextdateParameter, routeidParameter);
+        }
+    
+        public virtual int CustSilco_InsertEditLog(string user, string inspectiontype, string systemcode, string sitecode, string action, string code, Nullable<int> customernumber)
+        {
+            var userParameter = user != null ?
+                new ObjectParameter("user", user) :
+                new ObjectParameter("user", typeof(string));
+    
+            var inspectiontypeParameter = inspectiontype != null ?
+                new ObjectParameter("inspectiontype", inspectiontype) :
+                new ObjectParameter("inspectiontype", typeof(string));
+    
+            var systemcodeParameter = systemcode != null ?
+                new ObjectParameter("systemcode", systemcode) :
+                new ObjectParameter("systemcode", typeof(string));
+    
+            var sitecodeParameter = sitecode != null ?
+                new ObjectParameter("sitecode", sitecode) :
+                new ObjectParameter("sitecode", typeof(string));
+    
+            var actionParameter = action != null ?
+                new ObjectParameter("action", action) :
+                new ObjectParameter("action", typeof(string));
+    
+            var codeParameter = code != null ?
+                new ObjectParameter("code", code) :
+                new ObjectParameter("code", typeof(string));
+    
+            var customernumberParameter = customernumber.HasValue ?
+                new ObjectParameter("customernumber", customernumber) :
+                new ObjectParameter("customernumber", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CustSilco_InsertEditLog", userParameter, inspectiontypeParameter, systemcodeParameter, sitecodeParameter, actionParameter, codeParameter, customernumberParameter);
+        }
     }
 }

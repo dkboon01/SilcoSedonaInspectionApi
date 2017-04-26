@@ -1,0 +1,6 @@
+﻿Generated model file: custsilco.edmx.
+Loading metadata from the database took 00:00:00.9270187.
+Generating the model took 00:00:01.1389184.
+Generated model file: CustSilco.edmx.
+Loading metadata from the database took 00:00:00.7705869.
+Generating the model took 00:00:00.5757044.

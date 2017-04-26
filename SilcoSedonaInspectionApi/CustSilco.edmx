@@ -4,13 +4,26 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Silco_FinalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Silco_FinalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <Function Name="CustSilco_AllInspForSiteServiceComp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="siteid" Type="int" Mode="In" />
           <Parameter Name="servicecompany" Type="int" Mode="In" />
         </Function>
-        <EntityContainer Name="Silco_FinalModelStoreContainer">
-        </EntityContainer>
+        <Function Name="CustSilco_InsertEditLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user" Type="varchar" Mode="In" />
+          <Parameter Name="inspectiontype" Type="varchar" Mode="In" />
+          <Parameter Name="systemcode" Type="varchar" Mode="In" />
+          <Parameter Name="sitecode" Type="varchar" Mode="In" />
+          <Parameter Name="action" Type="varchar" Mode="In" />
+          <Parameter Name="code" Type="varchar" Mode="In" />
+          <Parameter Name="customernumber" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CustSilco_SV_Inspection" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="inspectionid" Type="int" Mode="In" />
+          <Parameter Name="nextdate" Type="date" Mode="In" />
+          <Parameter Name="routeid" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="Silco_FinalModelStoreContainer" />
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -19,6 +32,20 @@
           <FunctionImport Name="CustSilco_AllInspForSiteServiceComp" ReturnType="Collection(Silco_FinalModel.CustSilco_AllInspForSiteServiceComp_Result)">
             <Parameter Name="siteid" Mode="In" Type="Int32" />
             <Parameter Name="servicecompany" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CustSilco_SV_Inspection">
+            <Parameter Name="inspectionid" Mode="In" Type="Int32" />
+            <Parameter Name="nextdate" Mode="In" Type="DateTime" />
+            <Parameter Name="routeid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CustSilco_InsertEditLog">
+            <Parameter Name="user" Mode="In" Type="String" />
+            <Parameter Name="inspectiontype" Mode="In" Type="String" />
+            <Parameter Name="systemcode" Mode="In" Type="String" />
+            <Parameter Name="sitecode" Mode="In" Type="String" />
+            <Parameter Name="action" Mode="In" Type="String" />
+            <Parameter Name="code" Mode="In" Type="String" />
+            <Parameter Name="customernumber" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="inspsearch" >
@@ -30,6 +57,7 @@
           <Property Type="String" Name="nextinpdate" Nullable="true" MaxLength="10" />
           <Property Type="String" Name="lastinpdate" Nullable="true" MaxLength="10" />
           <Property Type="Int32" Name="inspectionid" Nullable="true" />
+          <Property Type="Int32" Name="customer_system_id" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -46,9 +74,12 @@
                 <ScalarProperty Name="nextinpdate" ColumnName="nextinpdate" />
                 <ScalarProperty Name="lastinpdate" ColumnName="lastinpdate" />
                 <ScalarProperty Name="inspectionid" ColumnName="inspectionid" />
+                <ScalarProperty Name="customer_system_id" ColumnName="customer_system_id" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CustSilco_SV_Inspection" FunctionName="Silco_FinalModel.Store.CustSilco_SV_Inspection" />
+          <FunctionImportMapping FunctionImportName="CustSilco_InsertEditLog" FunctionName="Silco_FinalModel.Store.CustSilco_InsertEditLog" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
