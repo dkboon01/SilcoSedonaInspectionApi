@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace SilcoSedonaInspectionApi.Models
+namespace SilcoSedonaCustomApi.Models
 {
     public class EditLog
     {

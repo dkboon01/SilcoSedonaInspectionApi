@@ -17,7 +17,7 @@ using System.Data.Entity;
 using System.Data.SqlClient;
 using SilcoSedonaCustomApi.Models;
 using System.Globalization;
-using SilcoSedonaInspectionApi;
+
 
 namespace SilcoSedonaCustomApi.Models
 {
@@ -66,6 +66,25 @@ namespace SilcoSedonaCustomApi.Models
                 success = false;
             }
             return success;
+
+        }
+        public static List<CustSilco_SelectInvoicesForPastDues_Result> CustSilco_Invoices<T>(int siteid, int customerid)
+
+        {
+           // var db = new Silco_FinalEntities1();
+            
+          //  db.CustSilco_SelectInvoicesForPastDues
+          
+               //  CustSilco_SelectInvoicesForPastDues_Result inv = db.CustSilco_SelectInvoicesForPastDues<CustSilco_SelectInvoicesForPastDues_Result>(siteid, customerid).ToList();
+
+            var db = new Silco_FinalEntities1();
+            List<CustSilco_SelectInvoicesForPastDues_Result> inv = db.CustSilco_SelectInvoicesForPastDues(siteid, customerid).ToList();
+            return inv;
+
+
+
+
+            
 
         }
     }

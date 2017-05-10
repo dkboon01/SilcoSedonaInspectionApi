@@ -4,7 +4,6 @@
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
-    using SilcoSedonaCustomApi;
 
     public partial class SilcoSedona : DbContext
     {
@@ -44,6 +43,6 @@
                 .IsUnicode(false);
         }
 
-        public System.Data.Entity.DbSet<SilcoSedonaCustomApi.AR_Userdef_8> AR_Userdef_8 { get; set; }
+        public System.Data.Entity.DbSet<SilcoSedonaInspectionApi.AR_Userdef_8> AR_Userdef_8 { get; set; }
     }
 }

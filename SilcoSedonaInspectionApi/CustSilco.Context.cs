@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SilcoSedonaInspectionApi
+namespace SilcoSedonaCustomApi
 {
     using System;
     using System.Data.Entity;
@@ -89,6 +89,19 @@ namespace SilcoSedonaInspectionApi
                 new ObjectParameter("customernumber", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CustSilco_InsertEditLog", userParameter, inspectiontypeParameter, systemcodeParameter, sitecodeParameter, actionParameter, codeParameter, customernumberParameter);
+        }
+    
+        public virtual ObjectResult<CustSilco_SelectInvoicesForPastDues_Result> CustSilco_SelectInvoicesForPastDues(Nullable<int> siteid, Nullable<int> customerid)
+        {
+            var siteidParameter = siteid.HasValue ?
+                new ObjectParameter("siteid", siteid) :
+                new ObjectParameter("siteid", typeof(int));
+    
+            var customeridParameter = customerid.HasValue ?
+                new ObjectParameter("customerid", customerid) :
+                new ObjectParameter("customerid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CustSilco_SelectInvoicesForPastDues_Result>("CustSilco_SelectInvoicesForPastDues", siteidParameter, customeridParameter);
         }
     }
 }

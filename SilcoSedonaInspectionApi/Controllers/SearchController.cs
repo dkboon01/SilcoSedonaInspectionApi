@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using SilcoSedonaCustomApi.Models;
-using SilcoSedonaInspectionApi;
+using SilcoSedonaCustomApi;
 
 namespace SilcoSedonaCustomApi.Controllers
 {

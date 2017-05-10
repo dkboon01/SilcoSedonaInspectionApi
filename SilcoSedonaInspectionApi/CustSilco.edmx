@@ -18,6 +18,10 @@
           <Parameter Name="code" Type="varchar" Mode="In" />
           <Parameter Name="customernumber" Type="int" Mode="In" />
         </Function>
+        <Function Name="CustSilco_SelectInvoicesForPastDues" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="siteid" Type="int" Mode="In" />
+          <Parameter Name="customerid" Type="int" Mode="In" />
+        </Function>
         <Function Name="CustSilco_SV_Inspection" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="inspectionid" Type="int" Mode="In" />
           <Parameter Name="nextdate" Type="date" Mode="In" />
@@ -47,6 +51,10 @@
             <Parameter Name="code" Mode="In" Type="String" />
             <Parameter Name="customernumber" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="CustSilco_SelectInvoicesForPastDues" ReturnType="Collection(Silco_FinalModel.CustSilco_SelectInvoicesForPastDues_Result)">
+            <Parameter Name="siteid" Mode="In" Type="Int32" />
+            <Parameter Name="customerid" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="inspsearch" >
           </ComplexType>
@@ -58,6 +66,22 @@
           <Property Type="String" Name="lastinpdate" Nullable="true" MaxLength="10" />
           <Property Type="Int32" Name="inspectionid" Nullable="true" />
           <Property Type="Int32" Name="customer_system_id" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="CustSilco_SelectInvoicesForPastDues_Result">
+          <Property Type="Int32" Name="invoicenumber" Nullable="true" />
+          <Property Type="String" Name="InvoiceDate" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="Customer_Id" Nullable="false" />
+          <Property Type="Int32" Name="Customer_Site_Id" Nullable="false" />
+          <Property Type="String" Name="invdesc" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="partdesc" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="quantity" Nullable="true" />
+          <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="LineItemExtPrice" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="TotalInv" Nullable="true" Precision="19" />
+          <Property Type="DateTime" Name="Invoice_Date" Nullable="true" Precision="23" />
+          <Property Type="String" Name="memo" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="ServCompany" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Techname" Nullable="true" MaxLength="61" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -80,6 +104,26 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="CustSilco_SV_Inspection" FunctionName="Silco_FinalModel.Store.CustSilco_SV_Inspection" />
           <FunctionImportMapping FunctionImportName="CustSilco_InsertEditLog" FunctionName="Silco_FinalModel.Store.CustSilco_InsertEditLog" />
+          <FunctionImportMapping FunctionImportName="CustSilco_SelectInvoicesForPastDues" FunctionName="Silco_FinalModel.Store.CustSilco_SelectInvoicesForPastDues">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Silco_FinalModel.CustSilco_SelectInvoicesForPastDues_Result">
+                <ScalarProperty Name="invoicenumber" ColumnName="invoicenumber" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="Customer_Id" ColumnName="Customer_Id" />
+                <ScalarProperty Name="Customer_Site_Id" ColumnName="Customer_Site_Id" />
+                <ScalarProperty Name="invdesc" ColumnName="invdesc" />
+                <ScalarProperty Name="partdesc" ColumnName="partdesc" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="LineItemExtPrice" ColumnName="LineItemExtPrice" />
+                <ScalarProperty Name="TotalInv" ColumnName="TotalInv" />
+                <ScalarProperty Name="Invoice_Date" ColumnName="Invoice_Date" />
+                <ScalarProperty Name="memo" ColumnName="memo" />
+                <ScalarProperty Name="ServCompany" ColumnName="ServCompany" />
+                <ScalarProperty Name="Techname" ColumnName="Techname" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

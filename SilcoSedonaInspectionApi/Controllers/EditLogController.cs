@@ -5,14 +5,14 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using SilcoSedonaCustomApi.Models;
-using SilcoSedonaInspectionApi;
-using SilcoSedonaInspectionApi.Models;
+using SilcoSedonaCustomApi;
+
 
 namespace SilcoSedonaCustomApi.Controllers
 {
     public class EditLogController : ApiController
     {
-        //private CustSilco_AllInspForSiteServiceComp_Result srchinsp;
+      //  private Edi srchinsp;
 
         // GET: api/Search
         // @RequestMapping(path= "/api/Search/{siteid}/{sitecomp}", method=WebRequestMethods.Get)
@@ -47,8 +47,8 @@ namespace SilcoSedonaCustomApi.Controllers
                       var srchinsp =
                               Helper.CustSilco_EditLog(m.user, m.inspectiontype, m.systemcode, m.sitecode, m.action, m.code, m.customernumber);
 
-
-                        return  Request.CreateResponse(HttpStatusCode.OK);
+         //   return Request.CreateResponse(HttpStatusCode.OK, srchinsp);
+                      return  Request.CreateResponse(HttpStatusCode.OK);
                  }
 
         //// PUT: api/Search/5
@@ -57,9 +57,6 @@ namespace SilcoSedonaCustomApi.Controllers
 
         //}
 
-        //// DELETE: api/Search/5
-        //public void Delete(int id)
-        //{
-        //}
+        
     }
 }
