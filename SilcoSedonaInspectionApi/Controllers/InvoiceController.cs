@@ -16,14 +16,14 @@ namespace SilcoSedonaCustomApi.Controllers
         private SilcoSedona db = new SilcoSedona();
 
        // public HttpResponseMessage Get(int siteid, int customerid)
-       public HttpResponseMessage Get([FromBody] Invoice inv)
+       public HttpResponseMessage Get(int siteid, int customerid)
         {
             //  parm.siteid
             //    parm.servcomp
             
             // List<CustSilco_AllInspForSiteServiceComp_Result> srchinsp = 
-           var  invoices =
-               Helper.CustSilco_Invoices<CustSilco_SelectInvoicesForPastDues_Result>(inv.siteid, inv.customerid).ToList();
+    var  invoices =
+               Helper.CustSilco_Invoices<CustSilco_SelectInvoicesForPastDues_Result>(siteid, customerid).ToList();
 
 
             return Request.CreateResponse(HttpStatusCode.OK, invoices);
