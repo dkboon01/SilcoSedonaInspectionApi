@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using SilcoSedonaCustomApi.Models;
 using SilcoSedonaCustomApi;
+using static SilcoSedonaInspectionApi.APIService;
 
 namespace SilcoSedonaCustomApi.Controllers
 {
@@ -17,6 +18,7 @@ namespace SilcoSedonaCustomApi.Controllers
         // @RequestMapping(path= "/api/Search/{siteid}/{sitecomp}", method=WebRequestMethods.Get)
         // [Route("api/Search/{siteid}/{servcomp}")]
         //  public List<CustSilco_AllInspForSiteServiceComp_Result>Get(int siteid, int servcomp)
+        
         public HttpResponseMessage Get(int siteid, int servcomp)
         {
           //  parm.siteid

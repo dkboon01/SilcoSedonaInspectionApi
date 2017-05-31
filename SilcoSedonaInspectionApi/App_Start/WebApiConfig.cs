@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using SilcoSedonaInspectionApi;
 
 namespace SilcoSedonaCustomApi
 {
@@ -19,6 +20,7 @@ namespace SilcoSedonaCustomApi
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+            config.Filters.Add(new APIService.BasicAuthenticationAttribute());
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using SilcoSedonaCustomApi;
-
+using System.Globalization;
 
 namespace SilcoSedonaCustomApi.Controllers
 {
@@ -57,6 +57,9 @@ namespace SilcoSedonaCustomApi.Controllers
             }
             currentinsp.Route_Id = sV_Inspection.Route_Id;
             currentinsp.Next_Inspection_Date = sV_Inspection.Next_Inspection_Date;
+           // DateTime termdate = Convert.ToDateTime("1899/12/30");
+           // currentinsp.Terminated_Date = termdate;
+           
 
             db.Entry(currentinsp).State = EntityState.Modified;
           //  db.Entry(sV_Inspection).State = EntityState.Modified;
