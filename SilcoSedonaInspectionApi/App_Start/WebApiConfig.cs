@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web.Http;
 using SilcoSedonaInspectionApi;
 
+
 namespace SilcoSedonaCustomApi
 {
     public static class WebApiConfig
@@ -11,7 +12,7 @@ namespace SilcoSedonaCustomApi
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-
+            config.EnableSystemDiagnosticsTracing();
             // Web API routes
             config.MapHttpAttributeRoutes();
 
@@ -21,6 +22,8 @@ namespace SilcoSedonaCustomApi
                 defaults: new { id = RouteParameter.Optional }
             );
             config.Filters.Add(new APIService.BasicAuthenticationAttribute());
+            //added
+            //config.SuppressDefaultHostAuthentication();
         }
     }
 }

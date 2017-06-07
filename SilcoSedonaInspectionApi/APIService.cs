@@ -10,6 +10,7 @@ using System.Security.Principal;
 using System.Threading;
 using System.Web.Http.Controllers;
 using System.Net.Http;
+using System.Web.Http;
 
 namespace SilcoSedonaInspectionApi
 {
@@ -17,6 +18,7 @@ namespace SilcoSedonaInspectionApi
     {
         public class BasicAuthenticationAttribute : AuthorizationFilterAttribute
         {
+            [AllowAnonymous]
             public override void OnAuthorization(HttpActionContext actionContext)
             {
                 if (actionContext.Request.Headers.Authorization == null)
