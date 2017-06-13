@@ -17,7 +17,7 @@ using System.Data.Entity;
 using System.Data.SqlClient;
 using SilcoSedonaCustomApi.Models;
 using System.Globalization;
-
+using SilcoSedonaInspectionApi;
 
 namespace SilcoSedonaCustomApi.Models
 {

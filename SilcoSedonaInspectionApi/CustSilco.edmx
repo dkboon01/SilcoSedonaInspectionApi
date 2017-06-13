@@ -24,7 +24,7 @@
         </Function>
         <Function Name="CustSilco_SV_Inspection" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="inspectionid" Type="int" Mode="In" />
-          <Parameter Name="nextdate" Type="date" Mode="In" />
+          <Parameter Name="nextdate" Type="datetime" Mode="In" />
           <Parameter Name="routeid" Type="int" Mode="In" />
         </Function>
         <EntityContainer Name="Silco_FinalModelStoreContainer" />

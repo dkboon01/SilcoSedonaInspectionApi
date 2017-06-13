@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SilcoSedonaCustomApi
+namespace SilcoSedonaInspectionApi
 {
     using System;
     
