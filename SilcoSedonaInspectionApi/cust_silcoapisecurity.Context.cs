@@ -36,5 +36,31 @@ namespace SilcoSedonaInspectionApi
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAPISecurity_Result>("SelectAPISecurity", applicationidParameter);
         }
+    
+        public virtual ObjectResult<UpdateSvticketuserdef_Result> UpdateSvticketuserdef(Nullable<int> ticketnumber, string inreviewflag)
+        {
+            var ticketnumberParameter = ticketnumber.HasValue ?
+                new ObjectParameter("ticketnumber", ticketnumber) :
+                new ObjectParameter("ticketnumber", typeof(int));
+    
+            var inreviewflagParameter = inreviewflag != null ?
+                new ObjectParameter("inreviewflag", inreviewflag) :
+                new ObjectParameter("inreviewflag", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<UpdateSvticketuserdef_Result>("UpdateSvticketuserdef", ticketnumberParameter, inreviewflagParameter);
+        }
+    
+        public virtual ObjectResult<InsertExceptionAPI_Result> InsertExceptionAPI(string usercode, string exceptiontxt)
+        {
+            var usercodeParameter = usercode != null ?
+                new ObjectParameter("usercode", usercode) :
+                new ObjectParameter("usercode", typeof(string));
+    
+            var exceptiontxtParameter = exceptiontxt != null ?
+                new ObjectParameter("exceptiontxt", exceptiontxt) :
+                new ObjectParameter("exceptiontxt", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<InsertExceptionAPI_Result>("InsertExceptionAPI", usercodeParameter, exceptiontxtParameter);
+        }
     }
 }

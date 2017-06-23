@@ -87,5 +87,39 @@ namespace SilcoSedonaCustomApi.Models
             
 
         }
+        public static bool CustSilco_UpdateSVTicketUserdef(int ticketnumber, string inreviewflag )
+
+        {
+            var db = new Cust_SilcoEntities();
+            bool success;
+            try
+            {
+                var upd = db.UpdateSvticketuserdef(ticketnumber, inreviewflag);
+                success = true;
+            }
+            catch(Exception ex)
+            {
+                success = false;
+            }
+            return success;
+
+        }
+        public static bool CustSilco_insertlog(string exceptiontxt, string usercode)
+
+        {
+            var db = new Cust_SilcoEntities();
+            bool success;
+            try
+            {
+                var ins = db.InsertExceptionAPI(usercode, exceptiontxt);
+                success = true;
+            }
+            catch
+            {
+                success = false;
+            }
+            return success;
+
+        }
     }
 }

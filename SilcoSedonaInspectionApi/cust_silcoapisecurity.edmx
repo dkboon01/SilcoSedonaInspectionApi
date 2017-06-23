@@ -4,25 +4,48 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Cust_SilcoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Cust_SilcoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="InsertExceptionAPI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usercode" Type="varchar" Mode="In" />
+          <Parameter Name="exceptiontxt" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="SelectAPISecurity" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="applicationid" Type="int" Mode="In" />
         </Function>
+        <Function Name="UpdateSvticketuserdef" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ticketnumber" Type="int" Mode="In" />
+          <Parameter Name="inreviewflag" Type="varchar" Mode="In" />
+        </Function>
         <EntityContainer Name="Cust_SilcoModelStoreContainer" />
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Cust_SilcoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="Cust_SilcoEntities" annotation:LazyLoadingEnabled="true" >
           <FunctionImport Name="SelectAPISecurity" ReturnType="Collection(Cust_SilcoModel.SelectAPISecurity_Result)">
-            <Parameter Name="applicationid" Mode="In" Type="Int32" />
+          <Parameter Name="applicationid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateSvticketuserdef" ReturnType="Collection(Cust_SilcoModel.UpdateSvticketuserdef_Result)">
+            <Parameter Name="ticketnumber" Mode="In" Type="Int32" />
+            <Parameter Name="inreviewflag" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertExceptionAPI" ReturnType="Collection(Cust_SilcoModel.InsertExceptionAPI_Result)">
+            <Parameter Name="usercode" Mode="In" Type="String" />
+            <Parameter Name="exceptiontxt" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SelectAPISecurity_Result">
           <Property Type="Int32" Name="Cust_AppId" Nullable="false" />
           <Property Type="String" Name="ApiUserName" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="ApiPassWord" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="UpdateSvticketuserdef_Result">
+          <Property Type="Int32" Name="ticketnumber" Nullable="true" />
+          <Property Type="String" Name="inreviewflag" Nullable="true" MaxLength="1" />
+        </ComplexType>
+        <ComplexType Name="InsertExceptionAPI_Result">
+          <Property Type="String" Name="exceptiontxt" Nullable="true" />
+          <Property Type="String" Name="usercode" Nullable="true" MaxLength="30" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -36,6 +59,22 @@
                 <ScalarProperty Name="Cust_AppId" ColumnName="Cust_AppId" />
                 <ScalarProperty Name="ApiUserName" ColumnName="ApiUserName" />
                 <ScalarProperty Name="ApiPassWord" ColumnName="ApiPassWord" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UpdateSvticketuserdef" FunctionName="Cust_SilcoModel.Store.UpdateSvticketuserdef">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Cust_SilcoModel.UpdateSvticketuserdef_Result">
+                <ScalarProperty Name="ticketnumber" ColumnName="ticketnumber" />
+                <ScalarProperty Name="inreviewflag" ColumnName="inreviewflag" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertExceptionAPI" FunctionName="Cust_SilcoModel.Store.InsertExceptionAPI" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Cust_SilcoModel.InsertExceptionAPI_Result">
+                <ScalarProperty Name="exceptiontxt" ColumnName="exceptiontxt" />
+                <ScalarProperty Name="usercode" ColumnName="usercode" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using SilcoSedonaInspectionApi;
-
+using System.Web.Http.ExceptionHandling;
 
 namespace SilcoSedonaCustomApi
 {
@@ -22,6 +22,7 @@ namespace SilcoSedonaCustomApi
                 defaults: new { id = RouteParameter.Optional }
             );
             config.Filters.Add(new APIService.BasicAuthenticationAttribute());
+            config.Services.Replace(typeof(IExceptionLogger), new CustomAPIExceptionHandling());
             //added
             //config.SuppressDefaultHostAuthentication();
         }

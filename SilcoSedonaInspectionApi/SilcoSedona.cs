@@ -45,5 +45,7 @@
         }
 
         public System.Data.Entity.DbSet<SilcoSedonaCustomApi.AR_Userdef_8> AR_Userdef_8 { get; set; }
+
+        public System.Data.Entity.DbSet<SilcoSedonaCustomApi.AR_Userdef_9> AR_Userdef_9 { get; set; }
     }
 }
